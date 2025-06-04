@@ -1,0 +1,79 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: "Ancizar Sans", sans-serif;
+}
+
+.welcome-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  z-index: 1000;
+  animation: flipAndFade 6.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Alternative more realistic page flip */
+@keyframes flipAndFade {
+  0% {
+    opacity: 1;
+    transform: rotateY(0) scaleX(1);
+    transform-origin: left center;
+  }
+  50% {
+    opacity: 0.8;
+    transform: rotateY(-90deg) scaleX(0.8);
+    transform-origin: left center;
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-180deg) scaleX(0);
+    transform-origin: left center;
+    display: none;
+  }
+}
+
+.welcome-content {
+  text-align: center;
+  transform-style: preserve-3d;
+  animation: flipAndFade 4.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+}
+
+/* main section  */
+main {
+  margin-top: 87px;
+  padding-inline: 50px;
+  height: 100vh;
+  background-image: url(https://cdn.pixabay.com/photo/2016/11/29/02/20/cosmos-1866820_1280.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 4rem;
+}
